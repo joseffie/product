@@ -1,0 +1,73 @@
+.join-block {
+  @include adaptive-value('margin-bottom', 150, 90);
+
+  .btn {
+    padding: $field-padding-vertical rem(36);
+  }
+
+  &__body {
+    padding: 0 rem(75);
+
+    @media (max-width: $breakpoint1024) {
+      padding: 0;
+    }
+  }
+
+  &__block {
+    padding: rem(20) rem(40);
+    color: $white;
+    background-color: $color-main;
+    border-radius: rem(32);
+
+    @media (max-width: $breakpoint560) {
+      padding: rem(20) rem(25);
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(15);
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint768) {
+      flex-wrap: wrap;
+      gap: rem(32);
+      justify-content: center;
+    }
+  }
+
+  &__content {
+    flex: 0 1 65%;
+
+    @media (max-width: $breakpoint1024) {
+      flex-basis: 55%;
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+
+  &__pic {
+    display: block;
+    flex: 0 1 35%;
+    width: 100%;
+    filter: drop-shadow(0px 0px 32px rgb(0 0 0 / 15%));
+
+    @media (max-width: $breakpoint1024) {
+      flex-basis: 45%;
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex-basis: 100%;
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(45);
+  }
+}

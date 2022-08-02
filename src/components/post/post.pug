@@ -1,0 +1,18 @@
+mixin post(title, author, date, path, postAlt, postLink = '#')
+  .post
+    if (postLink != 'undefined' && postLink)
+      a.post__pic(href= postLink)
+        img(src= path, alt= postAlt)
+      .post__body
+        .post__meta
+          span.post__author By <strong>#{author}</strong>
+          time= date
+        a.post__title(href= postLink)= title
+    else
+      a.post__pic(href='#')
+        img(src= path, alt= postAlt)
+      .post__body
+        .post__meta
+          span.post__author By <strong>#{author}</strong>
+          time= date
+        a.post__title(href='#')= title

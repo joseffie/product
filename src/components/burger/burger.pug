@@ -1,0 +1,9 @@
+mixin burger(label)
+
+  //- Takes on:
+  //- label { string } - description, aria-label attribute value
+
+  - label = label || 'Toggle navigation'
+
+  .burger(data-burger, aria-label=label)
+    span

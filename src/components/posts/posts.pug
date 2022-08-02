@@ -1,0 +1,19 @@
+include ../post/post.pug
+
+section.posts
+  .container
+    .posts__header
+      h2.h2-title.posts__title Contents Strategies
+      p.posts__descr
+        | We focus on ergonomics and meeting you where
+        | you work. It's only a keystroke away.
+    .posts__row
+      +post(
+        'Increasing Prosperity With Positive Thinking', 'Wahid Ari', '03 March 2019', '@img/blog-pics/pic1.png', 'Working man'
+      )
+      +post(
+        'Motivation Is The First Step To Success', 'Wahid Ari', '03 March 2019', '@img/blog-pics/pic2.png', 'Working man'
+      )
+      +post(
+        'Success Steps For Your Personal Or Business', 'Wahid Ari', '03 March 2019', '@img/blog-pics/pic3.png', 'Working man'
+      )

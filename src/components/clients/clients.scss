@@ -1,0 +1,47 @@
+.clients {
+  @include adaptive-value('margin-bottom', 120, 80);
+  @include adaptive-value('padding-top', 100, 50);
+
+  &__title {
+    text-align: center;
+    text-transform: capitalize;
+    @include adaptive-value('margin-bottom', 50, 40);
+  }
+
+  &__icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(55);
+    align-items: center;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: $breakpoint1024) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__icon {
+    text-align: center;
+    transition: opacity 0.4s ease;
+
+    @include hover {
+      opacity: 0.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      img {
+        max-width: rem(200);
+        max-height: rem(60);
+
+        @media (max-width: $breakpoint560) {
+          max-width: rem(100);
+          max-height: rem(50);
+        }
+      }
+    }
+  }
+}

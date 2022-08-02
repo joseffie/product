@@ -1,0 +1,14 @@
+extends ../base/pug/base.pug
+
+append variables
+  -
+    var title = 'Resources | Product'
+    var menuHref = 'resources.html'
+
+block content
+  include ../components/promo/promo.pug
+
+  include ../components/latest-posts/latest-posts.pug
+
+  include ../components/contact-us/contact-us.pug
+

@@ -1,0 +1,99 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zi-sticky;
+  width: 100%;
+  background-color: var(--background);
+  box-shadow: 0px -2px 8px rgb(0 0 0 / 25%);
+  opacity: 0.99;
+
+  &__inner {
+    position: relative;
+    z-index: $zi-popup;
+    width: 100%;
+    height: 100%;
+    padding: rem(15) 0px;
+    background-color: var(--background);
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(10);
+    align-items: center;
+
+    .logo {
+      margin-right: auto;
+
+      @media (max-width: $breakpoint1024) {
+        order: 1;
+      }
+    }
+
+    .sign-buttons {
+      margin: 0 0 0 rem(24);
+
+      @media (max-width: $breakpoint1024) {
+        order: 2;
+        margin: 0 rem(24) 0 0;
+      }
+
+      @media (max-width: $breakpoint640) {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: $zi-tooltip;
+        width: 100%;
+        margin: 0;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+
+        &__row {
+          flex-direction: column;
+          gap: 0;
+
+          .btn {
+            width: 100%;
+            border-radius: 0;
+          }
+
+          .btn--transparent {
+            background-color: var(--background);
+
+            &:hover {
+              background-color: var(--btn-background-darken);
+              border-color: hsl(211deg 44% 82%);
+            }
+          }
+        }
+      }
+    }
+
+    .theme-switcher {
+      margin: 0 0 0 rem(16);
+
+      @media (max-width: $breakpoint1024) {
+        order: 3;
+        margin: 0 rem(16) 0 0;
+      }
+
+      @media (max-width: $breakpoint768) {
+        z-index: $zi-tooltip;
+      }
+
+      @media (max-width: $breakpoint560) {
+        position: absolute;
+        top: 50%;
+        left: $container-offset;
+        margin: 0;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.4s ease;
+        pointer-events: none;
+      }
+    }
+  }
+}

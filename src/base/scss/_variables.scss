@@ -1,0 +1,69 @@
+// Do not specify units of measurement in this varriables
+$layout-width: 1400; // <<- Layout full width
+$content-width-no-units: 1100; // <<- Layout container width
+$container-offset-no-units: 25; // <<- Container left and right padding
+$container-width-no-units: calc($content-width-no-units + ($container-offset-no-units * 2));
+
+$content-width: $content-width-no-units * 1px;
+$container-offset: $container-offset-no-units * 1px;
+$container-width: $content-width + ($container-offset * 2);
+
+// Breakpoints
+// Breakpoints are written as a fraction for mobile-first to work correctly.
+$breakpoint1440: 1439.98px;
+$breakpoint1248: 1247.98px;
+$breakpoint1024: 1023.98px;
+$breakpoint768: 767.98px;
+$breakpoint640: 639.98px;
+$breakpoint560: 559.98px;
+$breakpoint480: 479.98px;
+$breakpoint400: 399.98px;
+
+// Basic colors
+$gray-darkest: hsl(200, 29%, 19%);
+$gray-darken: hsl(199, 26%, 16%);
+$gray: hsl(200, 24%, 25%);
+$gray-light: hsl(0, 0%, 69%);
+$gray-lighten: hsl(200, 24%, 25%);
+$gray-lightest: hsl(0, 0%, 90%);
+$white: hsl(0, 0%, 100%);
+
+$color-red: hsl(0, 86%, 59%);
+$color-blue: hsl(218, 100%, 65%);
+$color-dark-blue: hsl(207, 58%, 21%);
+$color-light-blue: hsl(211deg 44% 82%);
+$color-green: hsl(173, 97%, 27%);
+$color-yellow: hsl(51, 98%, 48%);
+$color-violet: hsl(299, 84%, 25%);
+
+$color-main: $color-green;
+$text-color: $gray-darkest;
+
+// Fonts
+$font-size: rem(16);
+$font-size-sm: 0.8em;
+$font-family: 'Poppins', sans-serif;
+$font-family-primary: 'Inter', sans-serif;
+$font-family-secondary: 'Montserrat', sans-serif;
+$font-family-inputs: 'Roboto', sans-serif;
+$font-family-num-input: 'ProximaNova', sans-serif;
+
+// Main-navigation styles
+$nav-font-size: $font-size;
+$nav-opened-font-size: rem(24);
+
+// Other
+$field-padding-vertical: rem(10);
+$field-padding-horizontal: rem(20);
+$btn-bg-color: $color-main;
+$btn-border-rad: 4px;
+
+// Z-index
+$zi-dropdown: 1000;
+$zi-sticky: 1020;
+$zi-fixed: 1030;
+$zi-modal-backdrop: 1040;
+$zi-offcanvas: 1050;
+$zi-modal: 1060;
+$zi-popup: 1070;
+$zi-tooltip: 1080;

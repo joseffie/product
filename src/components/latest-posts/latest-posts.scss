@@ -1,0 +1,56 @@
+.latest-posts {
+  @include adaptive-value('margin-bottom', 150, 80);
+
+  &__header {
+    margin-bottom: rem(40);
+    text-align: center;
+
+    p {
+      margin: 0;
+      line-height: 150%;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(16);
+    line-height: 150%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(32);
+
+    @media (max-width: $breakpoint1024) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__link-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(35);
+    text-align: center;
+  }
+
+  &__more-link {
+    display: inline-flex;
+    gap: rem(8);
+    align-items: center;
+    padding: rem(5) 0;
+    color: inherit;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    @include adaptive-font(18, 14);
+
+    @include hover {
+      color: $color-main;
+    }
+  }
+}

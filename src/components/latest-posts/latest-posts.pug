@@ -1,0 +1,20 @@
+include ../post/post.pug
+
+section.latest-posts
+  .container
+    .latest-posts__header
+      h2.h2-title.latest-posts__title Latest Stories
+      p
+        | We focus on ergonomics and meeting
+        | you where you work. It's only a keystroke away.
+    .latest-posts__grid
+      +post('Increasing Prosperity With Positive Thinking', 'Wahid Ari', '03 March 2019', '@img/blog-pics/pic1.png', 'Working men')
+      +post('Motivation Is The First Step To Success', 'Wahid Ari', '03 March 2019', '@img/blog-pics/pic4.png', 'Webinare')
+      +post('Success Steps For Your Personal Or Business', 'Arid Wahie', '01 March 2019', '@img/blog-pics/pic5.png', 'Rich man')
+      +post('Increasing Prosperity With Positive Thinking', 'John Doe', '02 March 2019', '@img/blog-pics/pic6.png', 'Working man')
+      +post('Increasing Prosperity With Positive Thinking', 'Wahid Ari', '28 Februar 2019', '@img/blog-pics/pic7.png', 'Working man')
+      +post('Increasing Prosperity With Positive Thinking', 'Wahid Ari', '25 Februar 2019', '@img/blog-pics/pic8.png', 'Working man')
+    .latest-posts__link-wrap
+      a.latest-posts__more-link(href='#')
+        | More stories
+        +icon('circle-arrow-right', 'mono', 20, 20)

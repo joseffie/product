@@ -1,0 +1,37 @@
+mixin menuItem(item)
+  - var activeClass = menuHref === item.link ? " is-active" : "";
+  - item.subitems ? activeClass += "main-nav__item--parent" : null;
+    li.main-nav__item(class= activeClass)
+      if (typeof(item.link) !== 'undefined' && item.link)
+        a(href = item.link, aria-label!= item.text)
+      else
+        a(href = '#', aria-label!= item.text)
+
+      if block
+        block
+
+mixin navMenu(hasBurger = true)
+
+  //- Takes on:
+  //- hasBurger { true / false } - if set to true, then a burger menu appears at a certain width
+
+  if (typeof(hasBurger) !== 'undefined' && hasBurger)
+    nav.main-nav(data-burger-nav)
+      ul.main-nav__list
+        each item in mainmenuData
+          +menuItem(item)
+
+            if (item.subitems)
+              ul.main-nav__dropdown
+                each subitem in item.subitems
+                  +menuItem(subitem)
+  else
+    nav.main-nav
+      ul.main-nav__list
+        each item in mainmenuData
+          +menuItem(item)
+
+            if (item.subitems)
+              ul.main-nav__dropdown
+                each subitem in item.subitems
+                  +menuItem(subitem)

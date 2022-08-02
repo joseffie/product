@@ -1,0 +1,160 @@
+.contact {
+  background: var(--section-gradient-top);
+  border-radius: 150% 150% 0px 0px / 75% 75% 0px 0px;
+  @include adaptive-value('margin-bottom', 150, 80);
+  @include adaptive-value('padding-top', 90, 50);
+
+  @media (max-width: $breakpoint1024) {
+    border-radius: 150% 150% 0px 0px / 50% 50% 0px 0px;
+  }
+
+  @media (max-width: $breakpoint560) {
+    border-radius: 150px 150px 0px 0px / 100px 100px 0px 0px;
+  }
+
+  @media (max-width: $breakpoint480) {
+    border-radius: 150px 150px 0px 0px / 50px 50px 0px 0px;
+  }
+
+  &__header {
+    margin-bottom: rem(35);
+    text-align: center;
+
+    p {
+      margin: 0;
+      line-height: 150%;
+
+      @media (max-width: $breakpoint480) {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 16, 8);
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(50);
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: 1fr;
+      gap: rem(24);
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    align-items: center;
+
+    @media (max-width: $breakpoint768) {
+      &:nth-child(2) {
+        .contact__expert {
+          &:nth-child(1) {
+            order: 2;
+          }
+
+          &:nth-child(2) {
+            order: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__expert {
+    display: flex;
+    gap: rem(16);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__bubble-wrap {
+    position: relative;
+    min-width: rem(150);
+  }
+
+  &__bubble {
+    min-height: rem(50);
+    padding: rem(15) rem(25);
+    color: hsl(36deg 21% 15%);
+    font-weight: 500;
+    background-color: $white;
+    border-radius: 26.5px;
+    box-shadow: 0px 2px 15px rgb(23 58 86 / 10%);
+
+    @media (max-width: $breakpoint400) {
+      text-align: center;
+    }
+
+    &--left {
+      text-align: left;
+
+      ~ .contact__pointer {
+        left: 13%;
+      }
+    }
+
+    &--right {
+      text-align: right;
+
+      & ~ .contact__pointer {
+        right: 13%;
+      }
+    }
+  }
+
+  &__pointer {
+    position: absolute;
+    width: rem(17);
+    height: rem(17);
+    margin: rem(-9) auto 0 auto;
+    background-color: $white;
+    border-radius: 50%;
+  }
+
+  &__pic {
+    width: rem(100);
+    min-width: rem(100);
+    height: rem(100);
+    overflow: hidden;
+    border: 3px solid $gray-darken;
+    border-radius: 50%;
+
+    @media (max-width: $breakpoint480) {
+      width: rem(80);
+      min-width: rem(80);
+      height: rem(80);
+      border-width: 2px;
+    }
+
+    &--red-stroke {
+      border-color: $color-red;
+    }
+
+    &--green-stroke {
+      border-color: $color-green;
+    }
+
+    &--violet-stroke {
+      border-color: $color-violet;
+    }
+
+    &--blue-stroke {
+      border-color: $color-dark-blue;
+    }
+  }
+
+  &__btn-wrap {
+    display: flex;
+    justify-content: center;
+    @include adaptive-value('margin-top', 50, 30);
+  }
+}

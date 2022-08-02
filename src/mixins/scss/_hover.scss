@@ -1,0 +1,8 @@
+// Fix hover effect on touchscreen devices
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}

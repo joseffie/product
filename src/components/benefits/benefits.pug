@@ -1,0 +1,15 @@
+include ../btn/btn.pug
+
+section.benefits
+  .container
+    h2.h2-title.benefits__title
+      | Product was Built Specifically
+      | <br> for You
+    .benefits__row
+      each item in benefitsData
+        .benefits__benefit
+          +icon(item.icon, 'multi')
+          h3.h3-title.benefits__name= item.title
+          p= item.text
+    .benefits__btn-wrap
+      +btn('Sign up now', 'uppercase')(href='#')

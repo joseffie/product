@@ -1,0 +1,111 @@
+.reviews {
+  @include adaptive-value('margin-bottom', 150, 80);
+
+  &__header {
+    text-align: center;
+    @include adaptive-value('margin-bottom', 50, 30);
+  }
+
+  &__title {
+    margin: 0 0 rem(8) 0;
+  }
+
+  &__descr {
+    font-weight: 500;
+    line-height: 175%;
+    letter-spacing: 0.2px;
+
+    @media (max-width: $breakpoint480) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    @include adaptive-value('gap', 64, 32);
+
+    @media (max-width: $breakpoint1024) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+.review {
+  flex: 0 1 33.333;
+  padding: rem(28) rem(26);
+  background-color: var(--background);
+  border: 1px solid $gray-lightest;
+  border-radius: 5px;
+
+  @media (max-width: $breakpoint1024) {
+    flex-basis: 45%;
+  }
+
+  @media (max-width: $breakpoint560) {
+    flex-basis: 100%;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: rem(16);
+
+    .star {
+      fill: $color-yellow;
+      stroke: $color-yellow;
+      stroke-width: 1.5px;
+
+      &--unpainted {
+        fill: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: rem(16);
+    color: hsl(0deg 0% 45%);
+    line-height: 175%;
+    letter-spacing: 0.2px;
+  }
+
+  &__author {
+    display: flex;
+    gap: rem(14);
+    align-items: center;
+
+    img {
+      width: rem(50);
+      min-width: rem(50);
+      height: rem(50);
+      overflow: hidden;
+      border: 1px solid $gray-light;
+      border-radius: 50%;
+    }
+  }
+
+  &__author-info {
+    > * {
+      display: block;
+      line-height: 150%;
+      letter-spacing: 0.2px;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    color: $color-main;
+    font-weight: 600;
+    @include adaptive-font(16, 14);
+  }
+
+  &__job-title {
+    color: $color-dark-blue;
+    font-weight: 500;
+    @include adaptive-font(14, 12);
+  }
+}

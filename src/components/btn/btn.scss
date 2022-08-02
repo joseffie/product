@@ -1,0 +1,78 @@
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0;
+  padding: $field-padding-vertical $field-padding-horizontal;
+  overflow: hidden;
+  color: $white;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  background-color: $btn-bg-color;
+  background-image: none;
+  border: 1px solid rgb(0 0 0 / 0%);
+  border-radius: $btn-border-rad;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  @include adaptive-font(16, 12);
+
+  &:hover,
+  &:focus {
+    background-color: darken($btn-bg-color, 4%);
+  }
+
+  &--transparent {
+    color: var(--transparent-text-color);
+    background-color: rgb(0 0 0 / 0%);
+    border-color: hsl(211deg 44% 82%);
+
+    &:hover {
+      color: var(--transparent-text-color-hover);
+      border-color: rgb(0 0 0 / 0%);
+    }
+  }
+
+  &--uppercase {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &--thin {
+    font-weight: 500;
+  }
+
+  &--montserrat {
+    font-family: $font-family-secondary;
+  }
+
+  &--roboto {
+    font-family: $font-family-inputs;
+  }
+
+  &--white {
+    color: $color-main;
+    background-color: $white;
+
+    &:hover {
+      color: $color-main;
+      background-color: darken($white, 5%);
+    }
+
+    &:focus {
+      background-color: darken($white, 10%);
+    }
+  }
+
+  &--rounded {
+    border-radius: rem(100);
+  }
+}

@@ -1,0 +1,44 @@
+include ../btn/btn.pug
+
+section.how-works
+  .container
+    h2.h2-title.how-works__title
+      | How Product Work?
+    .how-works__grid
+      .how-works__row
+        img.how-works__img(src='@img/steps/pic1.png', alt='Apply')
+        .how-works__content
+          .how-works__step-header
+            h4.how-works__step-num STEP 1
+            h3.how-works__step-name
+              | Apply for a product
+          p
+            | Completing our easy step-by-step application
+            | form gives you access to multiple business with
+            | multiple products. We analyse your business
+            | through our proprietary credit analysis technology.
+      .how-works__row
+        .how-works__content
+          .how-works__step-header
+            h4.how-works__step-num STEP 2
+            h3.how-works__step-name
+              | Pay fully refundable
+          p
+            | Product will contactting you instantly to
+            | receive payment of the Application Fee. if
+            | no offer of product is available, your fee
+            | will be fully refunded.
+        img.how-works__img(src='@img/steps/pic2.png', alt='Refundable')
+      .how-works__row
+        img.how-works__img(src='@img/steps/pic3.png', alt='Completion')
+        .how-works__content
+          .how-works__step-header
+            h4.how-works__step-num STEP 3
+            h3.how-works__step-name
+              | Completion
+          p
+            | Product will continue to liase between borrower
+            | and manager to procees and complete a quick and
+            | efficient settlement.
+    .how-works__btn-wrap
+      +btn('Get in touch with us', 'montserrat')(href='#')

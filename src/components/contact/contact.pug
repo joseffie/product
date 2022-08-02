@@ -1,0 +1,33 @@
+section.contact
+  .container
+    .contact__header
+      h2.h2-title.contact__title Quick & Easy Process
+      p
+        | Do you require some help for your project:
+        | Conception workshop, <br> prototyping, marketing
+        | strategy, landing page, UX/UI?
+    .contact__columns
+      .contact__column
+        .contact__expert
+          img.contact__pic.contact__pic--red-stroke(src='@img/expert-avatars/pic1.png', alt='Avatar')
+          .contact__bubble-wrap
+            .contact__bubble.contact__bubble--left I can take care of your pitch
+            .contact__pointer
+        .contact__expert
+          .contact__bubble-wrap
+            .contact__bubble.contact__bubble--right I can design you website
+            .contact__pointer
+          img.contact__pic.contact__pic--green-stroke(src='@img/expert-avatars/pic2.png', alt='Avatar')
+      .contact__column
+        .contact__expert
+          .contact__bubble-wrap
+            .contact__bubble.contact__bubble--right I can prototype your app
+            .contact__pointer
+          img.contact__pic.contact__pic--violet-stroke(src='@img/expert-avatars/pic3.png', alt='Avatar')
+        .contact__expert
+          img.contact__pic.contact__pic--blue-stroke(src='@img/expert-avatars/pic4.png', alt='Avatar')
+          .contact__bubble-wrap
+            .contact__bubble.contact__bubble--left I can help marketing strategy
+            .contact__pointer
+    .contact__btn-wrap
+      +btn('Contact our expert')(href='#')

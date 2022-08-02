@@ -1,0 +1,142 @@
+.promo {
+  @include adaptive-value('margin-bottom', 70, 45);
+  @include adaptive-value('padding-top', 80, 50);
+
+  &__row {
+    display: flex;
+    gap: rem(45);
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint1024) {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      > * {
+        flex: 0 1 100%;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: rem(500);
+    filter: drop-shadow(8px 8px 32px rgb(0 0 0 / 25%));
+
+    @media (max-width: $breakpoint1024) {
+      max-width: rem(420);
+      margin: 0 auto;
+    }
+
+    @media (max-width: $breakpoint480) {
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+
+  &__title,
+  &__descr {
+    @media (max-width: $breakpoint480) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.03em;
+    @include adaptive-value('margin-bottom', 24, 16);
+
+    @media (max-width: $breakpoint480) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__descr {
+    line-height: 170%;
+    @include adaptive-font(20, 16);
+    @include adaptive-value('margin-bottom', 24, 20);
+  }
+
+  &__form {
+    position: relative;
+
+    .btn {
+      position: absolute;
+      top: 50%;
+      right: rem(8);
+      transform: translateY(-50%);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: rem(20) rem(20);
+    color: var(--placeholder-color);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    background-color: rgb(0 0 0 / 0%);
+    border: 1px solid $gray-lightest;
+    border-radius: rem(100);
+    outline: none;
+    @include adaptive-font(16, 12);
+
+    @include placeholder {
+      color: var(--placeholder-color);
+      @include adaptive-font(16, 12);
+    }
+
+    @media (max-width: $breakpoint480) {
+      padding: rem(20) rem(15);
+    }
+  }
+
+  &__joined {
+    display: flex;
+    gap: rem(10);
+    align-items: center;
+    margin-top: rem(24);
+  }
+
+  &__pics {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__pic {
+    min-width: rem(50);
+    max-width: rem(50);
+    height: rem(50);
+    margin-left: -20px;
+    overflow: hidden;
+    border: 4px solid hsl(190deg 38% 97%);
+    border-radius: 50%;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__amount {
+    line-height: 150%;
+    @include adaptive-font(14, 12);
+
+    span {
+      color: $color-main;
+      font-weight: 500;
+    }
+  }
+}

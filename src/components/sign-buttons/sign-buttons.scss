@@ -1,0 +1,7 @@
+.sign-buttons {
+  &__row {
+    display: flex;
+    gap: rem(24);
+    align-items: center;
+  }
+}

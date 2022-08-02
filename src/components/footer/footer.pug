@@ -1,0 +1,46 @@
+footer.footer
+  .container
+    .footer__row
+      .footer__meta
+        include ../logo/logo.pug
+        ul.footer__socials
+          li.footer__social
+            a(href='#', target='_blank')
+              +icon('instagram-icon', 'multi', width='inherit', height='inherit')
+          li.footer__social
+            a(href='#', target='_blank')
+              +icon('facebook-icon', 'multi', width='inherit', height='inherit')
+          li.footer__social
+            a(href='#', target='_blank')
+              +icon('twitter-icon', 'multi', width='inherit', height='inherit')
+      .footer__links
+        .footer__links-column
+          h4.footer__column-title Resource
+          ul.footer__links-list
+            li.footer__link
+              a(href='#') About us
+            li.footer__link
+              a(href='#') Blog
+            li.footer__link
+              a(href='#') Contact
+            li.footer__link
+              a(href='#') FAQ
+        .footer__links-column
+          h4.footer__column-title Legal Stuff
+          ul.footer__links-list
+            li.footer__link
+              a(href='#') Disclaimer
+            li.footer__link
+              a(href='#') Financing
+            li.footer__link
+              a(href='#') Privacy Policy
+            li.footer__link
+              a(href='#') Terms of Service
+      .footer__sign
+        h4.footer__column-title.footer__column-title--more-margin
+          | Knowing you're always on the best energy deal.
+        form.footer__form(action='/')
+          input.footer__input-num(type='tel', placeholder='Enter your phone Number', required)
+          +btn('Sign up Now')(type='submit')
+    .footer__copyright
+      | Made with love by Figmaland <br> All right reserved

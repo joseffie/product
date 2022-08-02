@@ -1,0 +1,17 @@
+extends ../base/pug/base.pug
+
+append variables
+  -
+    var title = 'Customers | Product'
+    var menuHref = 'customers.html'
+
+block content
+  include ../components/clients/clients.pug
+
+  include ../components/why/why.pug
+
+  include ../components/how-works/how-works.pug
+
+  include ../components/offers/offers.pug
+
+  include ../components/join-block/join-block.pug

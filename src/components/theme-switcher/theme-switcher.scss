@@ -1,0 +1,23 @@
+.theme-switcher {
+  display: inline-block;
+  min-width: rem(36);
+  max-width: rem(36);
+  height: rem(36);
+  padding: 0;
+  overflow: hidden;
+  color: inherit;
+  line-height: 1;
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+
+  @include hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    display: block;
+  }
+}

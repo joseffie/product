@@ -1,0 +1,24 @@
+.enterprise {
+  padding: rem(50) 0 rem(20) 0;
+  text-align: center;
+  background: var(--section-gradient-top);
+  @include adaptive-value('margin-bottom', 130, 60);
+
+  &__label {
+    margin: 0 0 rem(16) 0;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    @include adaptive-font(24, 17);
+  }
+
+  &__title {
+    margin-bottom: rem(8);
+  }
+
+  &__descr {
+    margin-bottom: rem(32);
+    line-height: 150%;
+    @include adaptive-font(18, 15);
+  }
+}

@@ -1,0 +1,28 @@
+include ../btn/btn.pug
+
+section.promo
+  .container
+    .promo__row
+      .promo__content
+        h1.h1-title.promo__title
+          | Great Business <br> made with Product.
+        p.promo__descr
+          | Build better customer relationships easily
+          | messaging that provides a more personal
+          | experience for you and your customers.
+        form.promo__form(action='/')
+          input.promo__input(type='email', placeholder='Enter your email address', required)
+          +btn('Join Now', 'rounded')(type='submit')
+        .promo__joined
+          ul.promo__pics
+            li.promo__pic
+              img(src='@img/joined-avatars/pic1.png', alt='Avatar')
+            li.promo__pic
+              img(src='@img/joined-avatars/pic2.png', alt='Avatar')
+            li.promo__pic
+              img(src='@img/joined-avatars/pic3.png', alt='Avatar')
+          .promo__amount
+            | Joined over <span>4,000+</span> other
+      picture
+        source(srcset='@img/resources-page-hero/mobile.png', media='(max-width: 559.98px')
+        img.promo__img(src='@img/resources-page-hero/desktop.png', alt='Application')

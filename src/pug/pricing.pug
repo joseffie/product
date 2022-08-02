@@ -1,0 +1,34 @@
+extends ../base/pug/base.pug
+
+include ../components/price-table/price-table.pug
+
+append variables
+  -
+    var title = 'Pricing | Product'
+    var menuHref = 'pricing.html'
+
+block content
+  +price-table-header('Let&#39;s get some real work done here.', 'Product is your perfect solution for working. Get started now for free', true, 'Pricing')
+    +price-table-tariff('Free', 'Brief price description', 0)
+      +price-table-benefits()
+        +price-table-benefit('Only 2 Operators')
+        +price-table-benefit('Notifications')
+        +price-table-benefit('Landing Pages')
+    +price-table-tariff('Standard', 'Brief price description', 5, '$', 'Per / month', 'Order now', true)
+      +price-table-benefits()
+        +price-table-benefit('5+ Operators')
+        +price-table-benefit('Notifications')
+        +price-table-benefit('Landing Pages')
+    +price-table-tariff('Premium', 'Brief price description', 10)
+      +price-table-benefits()
+        +price-table-benefit('10+ Operators')
+        +price-table-benefit('Notifications')
+        +price-table-benefit('Landing Pages')
+
+  include ../components/enterprise/enterprise.pug
+
+  include ../components/alongside/alongside.pug
+
+  include ../components/faq/faq.pug
+
+  include ../components/join-block/join-block.pug

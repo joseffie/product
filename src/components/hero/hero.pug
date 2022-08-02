@@ -1,0 +1,19 @@
+include ../btn/btn.pug
+
+section.hero
+  .container
+    .hero__row
+      .hero__content
+        h1.h1-title.hero__title
+          | Work at the speed
+          | <br> of thought
+        p.hero__descr
+          | Tools, tutorials, design and innovation experts,
+          | all in one place! The most intuitive way to
+          | imagine your next user experience.
+        .hero__buttons
+          +btn('Get started')(href='#')
+          a.hero__watch-link(href='#')
+            +icon('triangle-arrow-right', 'mono', 18, 15)
+            | Watch the Video
+      img.hero__pic(src='@img/hero.svg', alt='Social media')

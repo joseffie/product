@@ -1,0 +1,156 @@
+.contact-us {
+  @include adaptive-value('margin-bottom', 150, 80);
+
+  &__inner {
+    padding: 0 rem(115);
+
+    @media (max-width: $breakpoint1024) {
+      padding: 0 rem(45);
+    }
+
+    @media (max-width: $breakpoint768) {
+      padding: 0;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    @include adaptive-value('margin-bottom', 65, 30);
+  }
+
+  &__title {
+    letter-spacing: 0.2px;
+    @include adaptive-value('margin-bottom', 24, 16);
+  }
+
+  &__descr {
+    margin: 0;
+    font-weight: 500;
+    line-height: 150%;
+    @include adaptive-font(18, 15);
+  }
+
+  &__socials {
+    display: flex;
+    gap: rem(21);
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    @include adaptive-value('margin-bottom', 60, 40);
+  }
+
+  &__social {
+    a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.4s ease;
+
+      @include hover {
+        opacity: 0.8;
+      }
+
+      svg {
+        display: block;
+      }
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: rem(350);
+    margin-bottom: rem(70);
+
+    @media (max-width: $breakpoint480) {
+      height: rem(280);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__fieldset {
+    padding: rem(50);
+    border: 1px solid $gray-lightest;
+    border-radius: 20px;
+
+    @media (max-width: $breakpoint560) {
+      padding: rem(30);
+    }
+
+    @media (max-width: $breakpoint480) {
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.1px;
+    text-align: center;
+    @include adaptive-font(24, 16);
+    @include adaptive-value('margin-bottom', 45, 30);
+  }
+
+  &__form {
+    width: 100%;
+
+    .btn {
+      padding: $field-padding-vertical rem(40);
+    }
+  }
+
+  &__input,
+  &__textarea {
+    display: block;
+    width: 100%;
+    padding: rem(20);
+    color: $text-color;
+    font-family: $font-family-inputs;
+    line-height: 1;
+    letter-spacing: 0.1px;
+    background-color: hsl(0deg 0% 96%);
+    border: 1px solid hsl(0deg 0% 91%);
+    outline: none;
+    transition: border-color 0.3s ease;
+    @include adaptive-font(15, 11);
+    @include adaptive-value('margin-bottom', 45, 32);
+
+    @include placeholder {
+      color: $text-color;
+      font-size: inherit;
+      font-family: inherit;
+    }
+
+    @media (max-width: $breakpoint640) {
+      padding: rem(15);
+      border-width: 1.5px;
+    }
+
+    &:focus {
+      border-color: $color-main;
+    }
+  }
+
+  &__input {
+    border-radius: rem(40);
+  }
+
+  &__textarea {
+    height: rem(200);
+    border-radius: rem(10);
+    resize: none;
+
+    @media (max-width: $breakpoint480) {
+      height: rem(150);
+    }
+
+    @media (max-width: $breakpoint400) {
+      height: rem(100);
+    }
+  }
+}

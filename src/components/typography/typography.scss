@@ -1,0 +1,39 @@
+.h1-title,
+.h2-title,
+.h3-title,
+.h4-title,
+.h5-title {
+  margin: 0;
+}
+
+.h1-title,
+.h2-title,
+.h3-title {
+  font-weight: 700;
+  line-height: 125%;
+}
+
+.h3-title,
+.h4-title {
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.h1-title {
+  letter-spacing: 0.02em;
+  @include adaptive-font(40, 28);
+}
+
+.h2-title {
+  @include adaptive-font(32, 22);
+}
+
+.h3-title {
+  @include adaptive-font(22, 18);
+}
+
+.h5-title {
+  font-weight: 600;
+  font-size: rem(16);
+  line-height: 160%;
+}

@@ -1,0 +1,134 @@
+.main-nav {
+  @media (max-width: $breakpoint1024) {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: $zi-modal;
+    width: 30%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--background);
+    box-shadow: 0px 2px 8px rgb(0 0 0 / 25%);
+    transition: left 0.4s ease, top 0.4s ease;
+
+    &._active {
+      left: 0;
+    }
+  }
+
+  @media (max-width: $breakpoint768) {
+    top: -100%;
+    left: 0;
+    width: 100%;
+
+    &._active {
+      top: 0;
+
+      & ~ .sign-buttons {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint560) {
+    &._active {
+      & ~ .theme-switcher {
+        width: 1em;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: rem(25);
+    align-items: center;
+    padding: 0;
+    font-weight: 400;
+    font-size: $nav-font-size;
+    list-style: none;
+
+    @media (max-width: $breakpoint1024) {
+      flex-direction: column;
+      align-items: start;
+      min-height: 100%;
+      padding: rem(20) rem(15) 0 rem(30);
+      font-size: $nav-opened-font-size;
+    }
+
+    @media (max-width: $breakpoint768) {
+      gap: rem(15);
+      align-items: center;
+      justify-content: center;
+      padding: rem(45) 0 rem(80) 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    padding: rem(10) 0px;
+
+    @media (max-width: $breakpoint1024) {
+      a {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: $breakpoint768) {
+      a {
+        text-align: center;
+      }
+    }
+
+    a {
+      position: relative;
+      display: block;
+      color: var(--text-color);
+      text-align: center;
+      text-decoration: none;
+
+      &::before,
+      &::after {
+        text-decoration: inherit;
+        transition: opacity 0.4s ease;
+        content: attr(aria-label);
+      }
+
+      &::before {
+        font-weight: 600;
+        opacity: 0;
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+      }
+
+      @include hover {
+        &::before {
+          opacity: 1;
+        }
+
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+
+    &.is-active a {
+      &::before {
+        opacity: 1;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}

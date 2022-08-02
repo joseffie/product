@@ -1,0 +1,17 @@
+include ../burger/burger.pug
+
+include ../main-nav/main-nav.pug
+
+header.header
+  .header__inner
+    .container
+      .header__row
+        include ../logo/logo.pug
+
+        +burger()
+
+        +navMenu()
+
+        include ../sign-buttons/sign-buttons.pug
+
+        include ../theme-switcher/theme-switcher.pug

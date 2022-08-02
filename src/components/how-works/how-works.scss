@@ -1,0 +1,87 @@
+.how-works {
+  @include adaptive-value('margin-bottom', 150, 80);
+
+  &__title {
+    margin-bottom: rem(70);
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-value('gap', 100, 70);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(70);
+    align-items: center;
+
+    @media (max-width: $breakpoint640) {
+      grid-template-columns: 1fr;
+      gap: rem(45);
+    }
+  }
+
+  &__img {
+    max-width: rem(500);
+
+    @media (max-width: $breakpoint1024) {
+      max-width: rem(350);
+    }
+
+    @media (max-width: $breakpoint768) {
+      max-width: rem(300);
+    }
+
+    @media (max-width: $breakpoint640) {
+      order: 1;
+      max-width: rem(400);
+      margin: 0 auto;
+    }
+
+    @media (max-width: $breakpoint480) {
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    @media (max-width: $breakpoint640) {
+      order: 2;
+    }
+
+    p {
+      margin: 0;
+      line-height: 175%;
+    }
+  }
+
+  &__step {
+    &-header {
+      margin-bottom: rem(16);
+    }
+
+    &-num {
+      margin: 0 0 rem(16) 0;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: uppercase;
+      @include adaptive-font(20, 16);
+    }
+
+    &-name {
+      margin: 0;
+      font-weight: 600;
+      line-height: 150%;
+      @include adaptive-font(24, 19);
+    }
+  }
+
+  &__btn-wrap {
+    display: flex;
+    justify-content: center;
+    @include adaptive-value('margin-top', 80, 40);
+  }
+}

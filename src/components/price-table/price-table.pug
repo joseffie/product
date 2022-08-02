@@ -1,0 +1,77 @@
+include ../btn/btn.pug
+
+mixin price-table-header(title, descr, isTitleH1 = false, label)
+  if (isTitleH1 === true)
+    if (label != 'undefined' && label != '' && label)
+      section.price-table
+        .container
+          .price-table__header
+            h3.price-table__label!= label
+            h1.h1-title.price-table__title!= title
+            p!= descr
+          .price-table__row
+            block
+    else
+      section.price-table
+        .container
+          .price-table__header
+            h1.h1-title.price-table__title!= title
+            p!= descr
+          .price-table__row
+            block
+  else
+    if (label != 'undefined' && label != '' && label)
+      section.price-table
+        .container
+          .price-table__header
+            h3.price-table__label!= label
+            h2.h2-title.price-table__title!= title
+            p!= descr
+          .price-table__row
+            block
+    else
+      section.price-table
+        .container
+          .price-table__header
+            h2.h2-title.price-table__title!= title
+            p!= descr
+          .price-table__row
+            block
+
+mixin price-table-tariff(name, descr, cost, currency = '$', subType = 'Per / month', btnText = 'Order now', isPainted = false)
+  if (isPainted === true)
+    .price-table__block.price-table__block--painted
+      .price-table__block-header
+        h4.price-table__tariff-name!= name
+        p!= descr
+      .price-table__price
+        strong.price-table__num!= cost
+        .price-table__price-info
+          span.price-table__currency!= currency
+          span.price-table__sub-type!= subType
+      block
+
+      .price-table__btn-wrap
+        +btn(btnText, 'white')(href='#')
+  else
+    .price-table__block
+      .price-table__block-header
+        h4.price-table__tariff-name!= name
+        p!= descr
+      .price-table__price
+        strong.price-table__num!= cost
+        .price-table__price-info
+          span.price-table__currency!= currency
+          span.price-table__sub-type!= subType
+      block
+
+      .price-table__btn-wrap
+        +btn(btnText)(href='#')
+
+mixin price-table-benefits()
+  ul.price-table__tariff-benefits
+    block
+
+mixin price-table-benefit(text)
+  li.price-table__benefit
+    p!= text

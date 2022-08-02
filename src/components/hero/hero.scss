@@ -1,0 +1,105 @@
+.hero {
+  padding: rem(25) 0 rem(100) 0;
+  background-color: var(--background);
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-value('gap', 33, 11);
+
+    @media (max-width: $breakpoint640) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+    flex: 0 1 50%;
+
+    @media (max-width: $breakpoint1024) {
+      flex: 0 1 60%;
+    }
+
+    @media (max-width: $breakpoint640) {
+      flex: 1 1 auto;
+      order: 2;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(18);
+  }
+
+  &__descr {
+    line-height: 150%;
+    @include adaptive-value('margin-bottom', 45, 32);
+    @include adaptive-font(18, 15);
+  }
+
+  &__buttons {
+    display: flex;
+    gap: rem(30);
+    align-items: center;
+
+    @media (max-width: $breakpoint640) {
+      justify-content: center;
+    }
+
+    @media (max-width: $breakpoint400) {
+      flex-wrap: wrap;
+      gap: rem(20);
+
+      * {
+        flex: 0 1 100%;
+      }
+    }
+  }
+
+  &__watch-link {
+    display: inline-flex;
+    gap: rem(8);
+    align-items: center;
+    color: $color-main;
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: darken($color-main, 8%);
+    }
+
+    @media (max-width: $breakpoint400) {
+      justify-content: center;
+      text-align: center;
+    }
+
+    svg {
+      max-width: 18px;
+    }
+  }
+
+  &__pic {
+    flex: 0 1 50%;
+    min-width: 50%;
+    max-width: 100%;
+
+    @media (max-width: $breakpoint1024) {
+      flex: 0 1 40%;
+      min-width: 40%;
+      max-width: 40%;
+    }
+
+    @media (max-width: $breakpoint640) {
+      flex: 1 1 auto;
+      order: 1;
+      min-width: 60%;
+      max-width: 60%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: $breakpoint480) {
+      min-width: none;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.faq {
+  @include adaptive-value('margin-bottom', 150, 80);
+
+  &__header {
+    text-align: center;
+    @include adaptive-value('margin-bottom', 50, 30);
+  }
+
+  &__title,
+  &__descr {
+    line-height: 150%;
+  }
+
+  &__title {
+    margin-bottom: rem(8);
+  }
+
+  &__descr {
+    @include adaptive-font(18, 16);
+  }
+
+  &__accordion {
+    width: 100%;
+
+    &-item {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding: 0 0 rem(16) 0;
+      border-bottom: 1px solid $gray-lightest;
+
+      &._active {
+        .faq__accordion-content {
+          max-height: 100%;
+          transform: scaleY(1);
+        }
+
+        .faq__accordion-label::before {
+          background-image: url('../img/accordion-circles/minus-circle.svg');
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    &-label {
+      position: relative;
+      display: flex;
+      gap: rem(16);
+      padding: rem(12) 0 rem(6) 0;
+      font-weight: 500;
+      line-height: 150%;
+      cursor: pointer;
+      @include adaptive-font(18, 14);
+
+      &::before {
+        display: inline-block;
+        min-width: rem(24);
+        max-width: rem(24);
+        height: rem(24);
+        vertical-align: middle;
+        background: url('../img/accordion-circles/plus-circle.svg') no-repeat;
+        background-size: cover;
+        transition: background-image 0.4s ease, transform 0.4s ease;
+        content: '';
+
+        @media (max-width: $breakpoint400) {
+          min-width: rem(20);
+          max-width: rem(20);
+          height: rem(20);
+        }
+      }
+    }
+
+    &-content {
+      max-height: 0;
+      overflow: hidden;
+      transform: scaleY(0);
+      transform-origin: 50% 0;
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+  }
+}

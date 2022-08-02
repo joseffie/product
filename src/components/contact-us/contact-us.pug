@@ -1,0 +1,29 @@
+include ../btn/btn.pug
+
+section.contact-us
+  .container
+    .contact-us__inner
+      .contact-us__header
+        h2.h2-title.contact-us__title Contact Us
+        p.contact-us__descr
+          | Need more detailed information?
+          | <br> Get in touch with us.
+      ul.contact-us__socials
+        li.contact-us__social
+          a(href='#', target='_blank')
+            +icon('instagram-icon', 'multi', 50, 50)
+        li.contact-us__social
+          a(href='#', target='_blank')
+            +icon('facebook-icon', 'multi', 50, 50)
+        li.contact-us__social
+          a(href='#', target='_blank')
+            +icon('twitter-icon', 'multi', 50, 50)
+      .contact-us__map
+        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2566.4003462326195!2d-122.43286919540759!3d37.7761463736798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580a566c5584b%3A0x6dfe20f0274d039b!2zSGF5ZXMgU3QsIFNhbiBGcmFuY2lzY28sIENBLCDQodCo0JA!5e1!3m2!1sru!2sru!4v1659356727699!5m2!1sru!2sru', allowfullscreen='', loading='lazy', referrerpolicy='no-referrer-when-downgrade')
+      .contact-us__fieldset
+        h4.contact-us__label Send a message
+        form.contact-us__form(action='/')
+          input.contact-us__input(type='text', placeholder='Your Name', required)
+          input.contact-us__input(type='email', placeholder='Your Email', required)
+          textarea.contact-us__textarea(placeholder='Your Message', required)
+          +btn('Send', 'roboto,thin,rounded')(type='submit')

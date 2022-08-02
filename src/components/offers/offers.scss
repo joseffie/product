@@ -1,0 +1,86 @@
+.offers {
+  background: var(--section-gradient-top);
+  @include adaptive-value('margin-bottom', 150, 80);
+  @include adaptive-value('padding-top', 35, 30);
+
+  &__title {
+    margin-bottom: rem(80);
+    line-height: 150%;
+    text-align: center;
+
+    @media (max-width: $breakpoint480) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    @include adaptive-value('gap', 200, 60);
+
+    @media (max-width: $breakpoint560) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    flex: 0 1 50%;
+    text-align: center;
+
+    @media (max-width: $breakpoint560) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__icon {
+    max-width: rem(150);
+    max-height: rem(150);
+    margin: 0 auto;
+    margin-bottom: rem(27);
+
+    @media (max-width: $breakpoint768) {
+      max-width: rem(110);
+      max-height: rem(110);
+    }
+  }
+
+  &__name {
+    margin: 0 0 rem(16) 0;
+    font-weight: 500;
+    line-height: 120%;
+    @include adaptive-font(24, 18);
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    @include adaptive-font(18, 14);
+  }
+
+  &__feature {
+    margin-bottom: rem(7);
+    line-height: 150%;
+    text-transform: capitalize;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-top: rem(14);
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: $color-main;
+    }
+  }
+}

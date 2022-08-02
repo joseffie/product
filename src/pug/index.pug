@@ -1,0 +1,40 @@
+extends ../base/pug/base.pug
+
+include ../components/price-table/price-table.pug
+
+append variables
+  -
+    var title = 'Home | Product'
+    var menuHref = 'index.html'
+
+block content
+  include ../components/hero/hero.pug
+
+  include ../components/benefits/benefits.pug
+
+  include ../components/capabilities/capabilities.pug
+
+  include ../components/contact/contact.pug
+
+  include ../components/posts/posts.pug
+
+  +price-table-header('Price Table', 'We offer competitive price')
+    +price-table-tariff('Free', 'Brief price description', 0)
+      +price-table-benefits()
+        +price-table-benefit('Only 2 Operators')
+        +price-table-benefit('Notifications')
+        +price-table-benefit('Landing Pages')
+    +price-table-tariff('Standard', 'Brief price description', 5, '$', 'Per / month', 'Order now', true)
+      +price-table-benefits()
+        +price-table-benefit('5+ Operators')
+        +price-table-benefit('Notifications')
+        +price-table-benefit('Landing Pages')
+    +price-table-tariff('Premium', 'Brief price description', 10)
+      +price-table-benefits()
+        +price-table-benefit('10+ Operators')
+        +price-table-benefit('Notifications')
+        +price-table-benefit('Landing Pages')
+
+  include ../components/reviews/reviews.pug
+
+  include ../components/join-block/join-block.pug

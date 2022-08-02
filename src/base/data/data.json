@@ -1,0 +1,42 @@
+{
+  "mainmenuData": [
+    {
+      "text": "Product",
+      "link": "index.html"
+    },
+    {
+      "text": "Customers",
+      "link": "customers.html"
+    },
+    {
+      "text": "Pricing",
+      "link": "pricing.html"
+    },
+    {
+      "text": "Resources",
+      "link": "resources.html"
+    }
+  ],
+  "benefitsData": [
+    {
+      "icon": "icon-with-cursor",
+      "title": "First click tests",
+      "text": "While most people enjoy casino gambling."
+    },
+    {
+      "icon": "icon-with-result",
+      "title": "Design surveys",
+      "text": "Sports betting, lottery and bingo playing for the fun."
+    },
+    {
+      "icon": "icon-with-heart-violet",
+      "title": "Preference tests",
+      "text": "The Myspace page defines the individual."
+    },
+    {
+      "icon": "icon-with-clocks",
+      "title": "Five second tests",
+      "text": "Personal choices and the overall personality of the person. "
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+// stylelint-disable function-comma-newline-after
+// stylelint-disable function-comma-space-after
+
+:root {
+  --section-gradient-bottom-lighten: linear-gradient(
+    180deg,
+    hsl(200deg 29% 19%),
+    hsl(200deg 24% 25%)
+  );
+  --section-gradient-bottom: linear-gradient(180deg, hsl(199deg 26% 16%), hsl(200deg 24% 25%));
+  --section-gradient-top: linear-gradient(180deg, hsl(200deg 24% 25%), hsl(199deg 26% 16%));
+}
+
+body {
+  --text-color: hsl(0deg 0% 100%);
+  --body-bg: hsl(199deg 26% 16%);
+}
+
+.header {
+  --background: hsl(199deg 26% 16%);
+  --btn-background-darken: hsl(200deg 24% 25%);
+}
+
+.main-nav {
+  --background: hsl(199deg 26% 16%);
+  --text-color: hsl(0deg 0% 100%);
+}
+
+.burger {
+  --color: hsl(0deg 0% 100%);
+}
+
+.logo {
+  --text-color: hsl(0deg 0% 100%);
+}
+
+.btn {
+  --transparent-text-color: hsl(0deg 0% 100%);
+  --transparent-text-color-hover: hsl(0deg 0% 100%);
+}
+
+.hero {
+  --background: hsl(200deg 29% 19%);
+}
+
+.post {
+  --border-color: rgb(0 0 0 / 0%);
+  --body-background: hsl(0deg 0% 100%);
+  --text-color: hsl(200deg 29% 19%);
+}
+
+.why {
+  --background: hsl(200deg 29% 19%);
+}
+
+.review {
+  --background: hsl(0deg 0% 90%);
+}
+
+.offers {
+  --text-color: hsl(0deg 0% 100%);
+}
+
+.promo {
+  --placeholder-color: hsl(0deg 0% 100%);
+}
